@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local delivery and source artifacts
+/*.zip
+/YANIO_V2_CAPTURAS/
+/capturas-yanio-v2/
+/capturas-yanio-v2-final/
+/source-assets/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

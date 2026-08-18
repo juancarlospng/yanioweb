@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ventures } from "@/content/ventures";
+
+export function generateStaticParams() { return ventures.map((venture) => ({ slug: venture.slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const venture = ventures.find((item) => item.slug === slug); return venture ? { title: venture.name, description: venture.description } : {}; }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const venture = ventures.find((item) => item.slug === slug); if (!venture) notFound(); return <main id="main"><header className="page-hero container"><span className="kicker">{venture.category}</span><h1>{venture.name}</h1><p className="lead">{venture.tagline}</p><p>{venture.description}</p><div className="actions"><Link className="btn primary" href={`/ecosystem#${venture.slug}`}>Explore in ecosystem ↗</Link>{venture.externalUrl && <a className="btn" href={venture.externalUrl} target="_blank" rel="noreferrer">Visit website ↗</a>}</div></header><section className="section"><div className="container detail-facts"><div><span className="tag">Strategic function</span><p>{venture.strategicFunction}</p></div><div><span className="tag">Yanio’s role</span><p>{venture.role}</p></div><div><span className="tag">Status</span><p>{venture.status}</p></div><div><span className="tag">Opportunity</span><p>{venture.opportunity}</p></div></div></section></main>; }
