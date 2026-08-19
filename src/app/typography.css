@@ -1,0 +1,291 @@
+/* Typography V2 — future editorial through precision, not effects. */
+:root {
+  --font-display: var(--font-body);
+  --font-mono: var(--font-body);
+  --font-editorial: var(--font-serif), Georgia, "Times New Roman", serif;
+
+  --text-hero: clamp(5.75rem, 8.4vw, 7.5rem);
+  --text-page: clamp(4.5rem, 7.8vw, 7rem);
+  --text-section: clamp(3.5rem, 5.4vw, 4.75rem);
+  --text-project: clamp(2.75rem, 4.8vw, 4.75rem);
+  --text-body: clamp(1rem, 0.3vw + 0.94rem, 1.125rem);
+  --text-body-large: clamp(1.18rem, 0.75vw + 1rem, 1.55rem);
+  --text-label: clamp(0.66rem, 0.08vw + 0.64rem, 0.72rem);
+  --text-meta: 0.72rem;
+  --text-ui: 0.81rem;
+
+  --leading-display: 0.91;
+  --leading-editorial: 0.92;
+  --leading-body: 1.58;
+  --tracking-display: -0.045em;
+  --tracking-project: -0.035em;
+  --tracking-label: 0.16em;
+  --tracking-ui: 0.015em;
+}
+
+body {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: var(--leading-body);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Primary display system */
+.hero-copy h1,
+.page-hero h1,
+.case-hero h1,
+.contact-page h1,
+.section-heading h2,
+.about-copy h2,
+.advantage-overlay h2,
+.opportunity-section h2,
+.detail-layout h2,
+.editorial-title,
+.quote-section p,
+.venture-copy h3,
+.story-intro h3,
+.focus-table h3,
+.work-index-card h2,
+.venture-link-list h2 {
+  font-family: var(--font-display), Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+}
+
+.hero-copy h1 {
+  margin-block: 0.85rem 2rem;
+  font-size: var(--text-hero);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.hero-copy h1 span {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--leading-editorial);
+  letter-spacing: -0.035em;
+}
+
+.page-hero h1,
+.case-hero h1,
+.contact-page h1 {
+  font-size: var(--text-page);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.case-hero h1 {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.about-copy h2,
+.advantage-overlay h2,
+.opportunity-section h2 {
+  font-size: var(--text-section);
+  font-weight: 500;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.section-heading h2 em,
+.about-copy h2 em,
+.advantage-overlay h2 em,
+.opportunity-section h2 em,
+.page-hero h1 em,
+.contact-page h1 em,
+.quote-section em {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--leading-editorial);
+  letter-spacing: -0.025em;
+}
+
+.compact-heading h2,
+.advantage-overlay h2,
+.about-copy h2,
+.opportunity-section h2 {
+  font-size: clamp(3.25rem, 4.8vw, 4.5rem);
+}
+
+.venture-copy h3,
+.story-intro h3,
+.work-index-card h2 {
+  font-size: var(--text-project);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: var(--tracking-project);
+}
+
+.focus-table h3 {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+/* Technical metadata — same sans, differentiated by rhythm. */
+.kicker,
+.tag,
+.eyebrow,
+.story-number,
+.focus-index,
+.be-tag,
+.be-caption small,
+.be-core small,
+.back-link {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  letter-spacing: 0.17em;
+}
+
+.story-number,
+.focus-index {
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-glass-note,
+.hero-foot,
+.copyright,
+.language-switcher select,
+.brand span {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Readable body hierarchy */
+.hero-thesis {
+  max-width: 620px;
+  font-size: var(--text-body-large);
+  line-height: 1.48;
+  letter-spacing: -0.018em;
+}
+
+.lead,
+.section-heading > p,
+.story-intro p,
+.venture-copy p,
+.about-copy > p,
+.advantage-overlay p,
+.focus-table p,
+.detail-layout > div > p,
+.work-index-card p,
+.opportunity-section p,
+.page-hero > p,
+.case-hero > p {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: -0.01em;
+}
+
+.large-copy {
+  font-size: var(--text-body-large);
+  line-height: 1.52;
+  letter-spacing: -0.018em;
+}
+
+/* Quiet interface typography */
+.desktop-nav,
+.mobile-panel,
+.btn,
+.text-link,
+.form-submit a,
+.direct-mail,
+.footer-nav,
+.footer-email {
+  font-size: var(--text-ui);
+  font-weight: 500;
+  letter-spacing: var(--tracking-ui);
+}
+
+.brand {
+  font-size: 0.7rem;
+  letter-spacing: -0.01em;
+}
+
+.brand strong {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.btn {
+  text-transform: none;
+}
+
+/* Intentional vertical rhythm */
+.section-heading .kicker + h2,
+.about-copy .kicker + h2 {
+  margin-top: 1.15rem;
+}
+
+.story-intro .tag + h3,
+.venture-copy .tag + h3 {
+  margin-top: 0.9rem;
+}
+
+.section-heading > p {
+  max-width: 430px;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --text-hero: clamp(4.4rem, 9.2vw, 5.6rem);
+    --text-section: clamp(3.25rem, 6.2vw, 4.25rem);
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --text-hero: clamp(3.25rem, 15vw, 4.25rem);
+    --text-page: clamp(3.3rem, 13.5vw, 5rem);
+    --text-section: clamp(2.6rem, 11.5vw, 3.35rem);
+    --text-project: clamp(2.6rem, 12vw, 3.6rem);
+    --text-body: clamp(0.96rem, 0.5vw + 0.86rem, 1.04rem);
+    --text-body-large: clamp(1.08rem, 1.2vw + 0.88rem, 1.3rem);
+  }
+
+  .hero-copy h1 {
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-copy h1 span {
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+  }
+
+  .section-heading h2,
+  .compact-heading h2,
+  .about-copy h2,
+  .advantage-overlay h2,
+  .opportunity-section h2 {
+    font-size: var(--text-section);
+  }
+
+  .section-heading > p {
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --text-hero: clamp(3.1rem, 14.5vw, 3.55rem);
+    --text-section: clamp(2.35rem, 11vw, 2.9rem);
+  }
+
+  .hero-copy h1 span {
+    white-space: nowrap;
+  }
+}
