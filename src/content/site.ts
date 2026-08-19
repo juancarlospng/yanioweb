@@ -3,7 +3,7 @@ export const site = {
   title: "Yanio Concepción Jr. — Founder & Ecosystem Architect",
   description: "Building ventures at the intersection of technology, culture and strategic infrastructure.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.yanioconcepcionjr.com",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "yanioconcepcionjr@delsolinc.ch",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "yanconcep@gmail.com",
   location: "Based in Switzerland. Building globally.",
 } as const;
 

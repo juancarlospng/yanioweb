@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { LanguageRuntime } from "@/components/i18n/LanguageRuntime";
 import { site } from "@/content/site";
 import "./globals.css";
+import "./cinematic.css";
 
 const body = Archivo({ variable: "--font-body", subsets: ["latin"] });
 const display = Archivo_Black({ variable: "--font-display", subsets: ["latin"], weight: "400" });

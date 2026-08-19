@@ -5,10 +5,29 @@ type ResponsiveImageProps = {
   height: number;
   className?: string;
   priority?: boolean;
+  treatment?: "cinematic" | "product" | "natural";
+  fullBleed?: boolean;
 };
 
-export function ResponsiveImage({ name, alt, width, height, className = "", priority = false }: ResponsiveImageProps) {
-  return <picture className={`responsive-image ${className}`}>
+export function ResponsiveImage({
+  name,
+  alt,
+  width,
+  height,
+  className = "",
+  priority = false,
+  treatment = "natural",
+  fullBleed = false,
+}: ResponsiveImageProps) {
+  const classes = [
+    "responsive-image",
+    "image-reveal",
+    `${treatment}-image`,
+    fullBleed ? "full-bleed" : "",
+    className,
+  ].filter(Boolean).join(" ");
+
+  return <picture className={classes} data-image-treatment={treatment}>
     <source media="(max-width: 760px)" srcSet={`/images/v2/optimized/${name}-sm.webp`} />
     <img
       src={`/images/v2/optimized/${name}-lg.webp`}
